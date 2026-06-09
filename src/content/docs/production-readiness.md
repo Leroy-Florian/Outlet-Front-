@@ -1,4 +1,8 @@
-# Production-readiness of adapters (HIJ-514)
+---
+title: Production readiness
+section: Contributing
+order: 4
+---
 
 Prove the adapters hold up under intensity **without a real production** — provoke the
 failure modes deliberately, hermetically, reproducibly. A big prod only reveals defects by

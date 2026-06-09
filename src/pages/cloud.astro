@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro'
+import { url } from '../lib/url'
+
+const pillars = [
+  {
+    title: 'Hosted private registries',
+    body: 'Publish your internal adapters and conventions to a registry only your team can pull from — no servers to run.',
+  },
+  {
+    title: 'Team management',
+    body: 'Invite teammates, scope access per registry, and keep one source of truth for shared infrastructure code.',
+  },
+  {
+    title: 'Drift & update insight',
+    body: 'See which projects installed which items, diff them against newer registry versions, and roll updates out deliberately.',
+  },
+]
+---
+
+<Base title="Outlet Cloud — hosted registries for teams" description="Outlet Cloud adds hosted private registries, team management and drift insight on top of the open-source Outlet CLI.">
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(65,209,255,0.12),transparent)]"></div>
+    <div class="mx-auto max-w-6xl px-6 pb-16 pt-24 text-center">
+      <p class="mx-auto mb-6 w-fit rounded-full bg-brand-500/15 px-4 py-1.5 text-sm font-medium text-brand-300">Coming soon — early access open</p>
+      <h1 class="mx-auto max-w-3xl text-5xl font-bold tracking-tight text-white">
+        The platform layer on top of the registry you already own
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-zinc-400">
+        Outlet stays copy-paste and open source. Outlet Cloud hosts your private registries,
+        manages your team and keeps your projects honest about what they installed.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-6 px-6 pb-20 md:grid-cols-3">
+    {pillars.map((p) => (
+      <div class="rounded-2xl border border-ink-700 bg-ink-900 p-6">
+        <h2 class="font-semibold text-white">{p.title}</h2>
+        <p class="mt-2 text-sm text-zinc-400">{p.body}</p>
+      </div>
+    ))}
+  </section>
+
+  <section id="early-access" class="mx-auto max-w-3xl scroll-mt-24 px-6 pb-24">
+    <div class="rounded-3xl border border-brand-500/30 bg-gradient-to-b from-brand-500/10 to-ink-900 p-10 text-center">
+      <h2 class="text-2xl font-bold text-white">Get early access</h2>
+      <p class="mx-auto mt-3 max-w-md text-zinc-400">
+        Leave your email and be the first to try Outlet Cloud — and to lock in launch pricing.
+      </p>
+      <form class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row" data-waitlist>
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="you@company.com"
+          class="flex-1 rounded-xl border border-ink-700 bg-ink-950 px-4 py-3 text-white placeholder-zinc-600 outline-none transition focus:border-brand-500"
+        />
+        <button type="submit" class="rounded-xl bg-brand-500 px-6 py-3 font-medium text-white transition hover:bg-brand-600">
+          Join the list
+        </button>
+      </form>
+      <p class="mt-4 hidden text-sm text-brand-300" data-waitlist-ok>
+        Thanks! Your email client just opened — send the message and you're on the list.
+      </p>
+      <p class="mt-4 text-xs text-zinc-600">No spam. One email at launch, that's it.</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 pb-24 text-center">
+    <p class="text-zinc-400">
+      Not ready for the cloud? The open-source CLI does everything locally.
+      <a href={url('/docs/getting-started')} class="text-brand-400 hover:text-brand-300">Start with the docs →</a>
+    </p>
+  </section>
+
+  <script>
+    // Placeholder capture until a real waitlist backend exists: hands off to the
+    // visitor's email client with a pre-filled message.
+    const form = document.querySelector<HTMLFormElement>('[data-waitlist]')
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const email = new FormData(form).get('email')
+      location.href = `mailto:mr.leroyflorian@gmail.com?subject=${encodeURIComponent('Outlet Cloud — early access')}&body=${encodeURIComponent(`Please add me to the Outlet Cloud early-access list: ${email}`)}`
+      document.querySelector('[data-waitlist-ok]')?.classList.remove('hidden')
+    })
+  </script>
+</Base>

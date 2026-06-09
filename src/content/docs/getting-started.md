@@ -1,15 +1,17 @@
-# Getting started
+---
+title: Getting started
+section: Introduction
+order: 2
+---
 
-::: warning Early but functional
-The installation engine and the CLI are implemented and tested end to end:
-`init`, `add`, `list`, `remove`, `diff` and `update` all work. The first registry
-concern — **email** (`email-abstractions`, `email-smtp`, `email-sendgrid`) — is real,
-compiled and tested.
-
-What is **not done yet** is distribution: the `outlet` tool is not published on NuGet
-yet, and no public registry is hosted. Until then you run the CLI from source and point
-it at your own registry source.
-:::
+> **Early but functional** — The installation engine and the CLI are implemented and
+> tested end to end: `init`, `add`, `list`, `remove`, `diff` and `update` all work. The
+> first registry concern — **email** (`email-abstractions`, `email-smtp`,
+> `email-sendgrid`) — is real, compiled and tested.
+>
+> What is **not done yet** is distribution: the `outlet` tool is not published on NuGet
+> yet, and no public registry is hosted. Until then you run the CLI from source and
+> point it at your own registry source.
 
 ## Requirements
 
@@ -61,4 +63,4 @@ dotnet test Outlet.slnx --filter "Category!=Live"
 ```
 
 For the project conventions and architecture rules, see the
-[Testing strategy](/testing) and [Production readiness](/production-readiness) pages.
+[Testing strategy](/docs/testing) and [Production readiness](/docs/production-readiness) pages.

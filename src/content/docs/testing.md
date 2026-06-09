@@ -1,4 +1,8 @@
-# Testing strategy (HIJ-512)
+---
+title: Testing strategy
+section: Contributing
+order: 3
+---
 
 High confidence on the adapters (the product's core) **without** slow CI. Two surfaces,
 two treatments.

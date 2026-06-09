@@ -1,4 +1,8 @@
-# What is Outlet?
+---
+title: What is Outlet?
+section: Introduction
+order: 1
+---
 
 Outlet is a **copy-paste registry of backend infrastructure for .NET** — the same idea
 as [shadcn/ui](https://ui.shadcn.com/), but for backend concerns such as email, cache,
@@ -43,4 +47,4 @@ single `AddXxx()` line.
 - An explicit JSON **manifest per item** (`*.registry.json`), validated and generated in
   CI, so the manifest never lies about what an item contains.
 
-Continue to [Getting started](/guide/getting-started).
+Continue to [Getting started](/docs/getting-started).

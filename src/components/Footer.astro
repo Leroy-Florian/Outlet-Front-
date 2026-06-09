@@ -1,0 +1,14 @@
+---
+import { url } from '../lib/url'
+---
+
+<footer class="border-t border-ink-800">
+  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-500 sm:flex-row">
+    <p>© {new Date().getFullYear()} Outlet. Open-source registry, MIT-spirited — you own the code.</p>
+    <nav class="flex gap-6">
+      <a href={url('/docs/introduction')} class="hover:text-zinc-300">Documentation</a>
+      <a href={url('/pricing')} class="hover:text-zinc-300">Pricing</a>
+      <a href="https://github.com/Leroy-Florian/Outlet-CLI" class="hover:text-zinc-300">GitHub</a>
+    </nav>
+  </div>
+</footer>
